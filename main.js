@@ -6,3 +6,12 @@
  * 4. 마우스가 호버되는 empty엘리먼트에 hovered 클래스 추가
  * 5. 마우스가 호버가 끝나면 empty엘리먼트에 hovered 클래스 제거
  */
+
+const emptyBoxes = Array.from(document.querySelectorAll(".empty"));
+const fill = document.querySelector(".fill");
+
+const dragStart = () => fill.classList.add("hold");
+const dragEnd = () => fill.classList.remove("hold");
+
+fill.addEventListener("dragstart", dragStart);
+fill.addEventListener("dragend", dragEnd);
